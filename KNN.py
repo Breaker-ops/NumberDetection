@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class KNN:
     def __init__(self, k=3):
         self.k = k
@@ -17,15 +16,15 @@ class KNN:
         return np.array(predictions)
 
     def _predict(self, x):
-        # calcul des distances
+        
         distances = [self._euclidean_distance(x, x_train) for x_train in self.X_train]
 
-        # indices des k plus proches
+
         k_indices = np.argsort(distances, axis=0)[:self.k]
 
-        # labels des voisins
+
         k_nearest_labels = [self.y_train[i] for i in k_indices]
 
-        # vote majoritaire
+
         values, counts = np.unique(k_nearest_labels, return_counts=True)
         return values[np.argmax(counts)]

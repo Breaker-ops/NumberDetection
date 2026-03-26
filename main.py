@@ -2,24 +2,15 @@ import numpy as np
 from resize import DATA_DIR
 import os
 import cv2
-import streamlit as st
 from PIL import Image
 
-st.title("Test de modèle de classification d'image")
-st.write("Uploader une image pour faire une prédiction.")
-uploaded_file = st.file_uploader("Choisir une image", type=["jpg", "png", "jpeg"])
-if uploaded_file is not None:
-
-    image = Image.open(uploaded_file)
-    st.image(image, caption="Image uploadée", use_container_width=True)
 path_dir = os.path.join("./", DATA_DIR)
 directory = os.listdir(path_dir)
 directory.sort()
 
 images = []
 labels = []
-
-
+        
 for dirs in directory :
     each_dir = os.path.join(DATA_DIR, dirs)
     for file in os.listdir(each_dir) :
@@ -31,7 +22,7 @@ for dirs in directory :
 images = np.array(images) / 255.0
 labels = np.array(labels)
 
-img_test = images[27]
+img_test = images[45]
 
 def predict(img_test) :
     distances = []
