@@ -25,3 +25,4 @@ def resize_img(name_dir:str, dest_dir:str, file_name:str, size:tuple) :
         
         image_resized.save(file_save)
         i += 1
+

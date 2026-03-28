@@ -8,4 +8,6 @@ So, we can see :
 
     - main.py : Here, we train and predict our KNN model without KNN.py file but we take the prediction's code in KNN.py.
 
-    - resize.py : It's a file that we use to convert our files in correct shape or size. 
+    - resize.py : It's a file that we use to convert our files in correct shape or size.
+
+    - convert_to_gray.py : This file permit to convert all pictures that you are in your folder to gray. So, you have "source_dir" to source directory and "dest_dir" to destination directory that you put all pictures converted.
